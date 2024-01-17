@@ -1,0 +1,35 @@
+/* フォントサイズ・タイトルタグ*/
+
+.fontsize--SS{ font-size : 1rem ; }
+.fontsize--S { font-size : 1.2rem ; }
+.fontsize--M { font-size : 1.5rem ; }
+.fontsize--L { font-size : 1.6rem ; }
+.fontsize--LL{ font-size : 1.8rem ; }
+.fontsize--TL{ font-size : 2.4rem ; }
+@media screen and ( min-width : 960px ){
+.fontsize--SS{ font-size : 1rem ; }
+.fontsize--S { font-size : 1.4rem ; }
+.fontsize--M { font-size : 1.5rem ; }
+.fontsize--L { font-size : 1.8rem ; }
+.fontsize--TL{ font-size : 4.0rem ; }
+}
+
+
+// @include media-down(md) {
+  // font-size: 1.33333334vw; // 10px/768px*100%
+// }
+
+
+.sp {
+  display: block;
+  @include media-up() {
+      display: none;
+  }
+}
+
+.xsp {
+  display: inline;
+  @include media-up(xxs) {
+      display: none;
+    }
+  }

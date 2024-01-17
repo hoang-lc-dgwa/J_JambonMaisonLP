@@ -1,0 +1,110 @@
+/******************
+ MAINVISUAL
+*******************************/
+.mainVisual {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+/** スライダー上キャッチコピー***/
+.visual__copy {
+  position: relative;
+  z-index: 1;
+  top: -150px;
+  color: $fc-wt;
+  font-family: 'shippori' ,'serif';
+  line-height: 1.3;
+  max-width: 1200px;
+  width: calc(100% - (20px*2)) ;
+  margin-right: auto;
+  margin-left: auto;
+  & {
+    @include fz_vw(30);
+  }
+
+}
+@include media-up(xs) {
+  .visual__copy {
+    font-size: 50px;
+    top: -230px;
+  }
+  }
+
+@include media-up() {
+  .visual__copy {
+    top: -380px;
+    // left: -20px;
+    font-size: 90px;
+    letter-spacing: .05rem;
+  }
+}
+
+.visual__copy.js-hide p{
+  opacity: 0;
+  transform: translateX( 20px);
+}
+.visual__copy.js-hide.js-show p{
+  opacity: 1;
+  transform: translateX( 0);
+}
+.visual__copy.js-hide.js-show p:nth-child(1){
+  transition:  1s ease-in-out 0s;
+}
+.visual__copy.js-hide.js-show p:nth-child(2){
+  transition:  1s ease-in-out 1s;
+}
+.visual__copy.js-hide.js-show p:nth-child(3){
+  transition:  1s ease-in-out 2s;
+}
+
+/** スライダー本体***/
+.slider {
+  height: 100vh;
+  overflow: hidden;
+  /* opacity: 0;  */
+//  transition: opacity 1s linear;
+}
+.slick-track {
+  overflow: hidden; /*IE*/
+}
+/* .slick.slick-initialized{ 
+ opacity: 1; } */
+
+.top_slide_on {
+ animation: slick-active 11s linear forwards;
+ }
+
+@keyframes slick-active {
+          0% {
+              transform: scale(1.07) rotate(.1deg);
+          }
+          100% {
+              transform: scale(1) rotate(.1deg);
+          }
+         }
+
+.slider li {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+ // overflow: hidden;
+}
+.slider li:nth-child(1) {
+    background-image: url(../img/01_1.jpg);
+  }
+
+.slider li:nth-child(2) {
+  background-image: url(../img/01_2.jpg);
+}
+.slider li:nth-child(3){
+  background-image: url(../img/01_3.jpg);
+}
+.slider li:nth-child(4){
+  background-image: url(../img/01_4.jpg);
+}
+.slider li:nth-child(5){
+  background-image: url(../img/01_5.jpg);
+}
+

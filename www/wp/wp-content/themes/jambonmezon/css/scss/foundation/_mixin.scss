@@ -1,0 +1,90 @@
+// Breakpoint
+//---------------------------------------
+$breakpoints-up: (
+  'xxs': 'print,screen and (min-width: 360px)',
+  'xs': 'print,screen and (min-width: 481px)',
+  'sm': 'print,screen and (min-width: 641px)',
+  'md': 'print,screen and (min-width: 769px)',
+  'm': 'print,screen and (min-width: 960px)',
+  'ml': 'print,screen and (min-width: 1024px)',
+  'lg': 'print,screen and (min-width: 1090px)',
+  'xlg': 'print,screen and (min-width: 1221px)',
+  'xxlg': 'print,screen and (min-width: 1451px)',
+) !default;
+$breakpoints-down: (
+  'xxlg': 'print,screen and (max-width: 1450px)',
+  'xlg': 'print,screen and (max-width: 1220px)',
+  'lg': 'print,screen and (max-width: 1024px)',
+  'm': 'print,screen and (max-width: 959px)',
+  'md': 'print,screen and (max-width: 768px)',
+  'sm': 'print,screen and (max-width: 640px)',
+  'xs': 'print,screen and (max-width: 480px)',
+  'xxs': 'print,screen and (max-width: 359px)',
+) !default;
+
+// Media queries 960px以上
+@mixin media-up($breakpoint: m) {
+  @media #{map-get($breakpoints-up, $breakpoint)} {
+    @content;
+  }
+}
+// Media queries 959px以下
+@mixin media-down($breakpoint: m) {
+  @media #{map-get($breakpoints-down, $breakpoint)} {
+    @content;
+  }
+}
+
+//フォントサイズvw指定
+@function get_vw($size, $viewport:320){
+  $rate: 100 / $viewport;
+  @return $rate * $size * 1vw;
+}
+
+@mixin fz_vw($font_size:10){
+  font-size: $font_size * 1px;
+  font-size: get_vw($font_size);
+}
+
+//フォントの見栄え
+@mixin good_ft(){
+  font-feature-settings: "palt";
+  text-align: justify;
+}
+
+//ナビボタン用
+@mixin whiteDot(){
+  content:'';
+  width: 1px;
+  height: 1px;
+  background: #191919;
+  display: inline-block;
+  position: absolute;
+}
+
+// @mixin sp($breakpoint: sp) {
+//   @media #{map-get($breakpoints, $breakpoint)} {
+//     @content;
+//   }
+// }
+
+// @mixin tab($breakpoint: tab) {
+//   @media #{map-get($breakpoints, $breakpoint)} {
+//     @content;
+//   }
+// }
+// @mixin pc($breakpoint: pc) {
+//   @media #{map-get($breakpoints, $breakpoint)} {
+//     @content;
+//   }
+// }
+// Media queries
+
+//usage: @include transition([property],[duration],[easing]);
+@mixin transition($property: all, $duration: 0.3s, $ease: ease) {
+  transition: $property $duration $ease;
+}
+@mixin transition2($x1,$x2,$x3,$x4) {
+  transition: $x1, $x2, $x3, $x4;
+}
+

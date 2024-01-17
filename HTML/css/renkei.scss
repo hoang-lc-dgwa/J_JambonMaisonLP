@@ -1,0 +1,49 @@
+$COLOR_GREEN: #0D4B1F; // Breakpoint
+//---------------------------------------
+$breakpoints-up: ('xxs': 'print,screen and (min-width: 360px)',
+  'xs': 'print,screen and (min-width: 481px)',
+  'sm': 'print,screen and (min-width: 641px)',
+  'md': 'print,screen and (min-width: 769px)',
+  'm': 'print,screen and (min-width: 960px)',
+  'ml': 'print,screen and (min-width: 1024px)',
+  'lg': 'print,screen and (min-width: 1090px)',
+  'xlg': 'print,screen and (min-width: 1221px)',
+  'xxlg': 'print,screen and (min-width: 1451px)',
+) !default;
+$breakpoints-down: ('xxlg': 'print,screen and (max-width: 1450px)',
+  'xlg': 'print,screen and (max-width: 1220px)',
+  'lg': 'print,screen and (max-width: 1024px)',
+  'm': 'print,screen and (max-width: 959px)',
+  'md': 'print,screen and (max-width: 768px)',
+  'sm': 'print,screen and (max-width: 640px)',
+  'xs': 'print,screen and (max-width: 480px)',
+  'xxs': 'print,screen and (max-width: 359px)',
+) !default;
+
+@mixin media-up($breakpoint: m) {
+  @media #{map-get($breakpoints-up, $breakpoint)} {
+    @content;
+  }
+}
+
+@mixin media-down($breakpoint: m) {
+  @media #{map-get($breakpoints-down, $breakpoint)} {
+    @content;
+  }
+}
+
+.renkei-lp {
+  .rk-inner {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1140px;
+    padding-left: 30px;
+    padding-right: 30px;
+
+    @include media-down(m) {
+      max-width: 600px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+}

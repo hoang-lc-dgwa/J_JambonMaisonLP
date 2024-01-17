@@ -1,0 +1,293 @@
+.header {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: transparent;
+  color: $cr-bg;
+  font-size: 1.5rem;
+  text-align: left;
+}
+#header.js-hide {
+  opacity: 0;
+}
+#header.js-show {
+  opacity: 1;
+  transition:  3s ease-in-out 3s;
+}
+.header__logo img {
+  width: 80px;
+}
+.header p {
+  font-family: $ff-gothic;
+  font-size: 13px;
+}
+.gnav {
+  font-family: $ff-din;
+  font-size: 18px;
+  overflow: auto;
+  position: fixed;
+  top: 0; 
+  right: -100%;
+  z-index: 40;
+  width: 350px;
+  max-width: 60%;
+  height: 100%;
+  padding-top: 100px;
+  background:#fff;
+  transition: all 0.7s ease-in-out 0s;
+  text-align: center;
+  overflow: hidden;/* IE */
+}
+_:lang(x)::-ms-backdrop, .content__ttl , .gnav { /* IE */
+  font-family: Meiryo, sans-serif;
+  font-weight: bold;
+}
+#drawer-checkbox:checked ~ .gnav {
+  right: 0;
+  transition: all 0.5s ease-in-out 0s;
+  box-shadow: 6px 0 25px rgba(0, 0, 0, 0.16);
+}
+
+/******** メニュー本体 **********/
+.menu li {
+  position: relative;
+  left: 100px;
+  opacity: 0;
+  padding: 10px 20px;
+  font-size: 2rem;
+  color: #000;
+  transition: left 0.3s ease-in-out 0s, opacity 0.3s ease-in-out 0s;
+  
+  &::after {
+    position: absolute;
+    content: '';
+    bottom: 10px;
+    left: 20px;
+    display: inline-block;
+    width: 0;
+    height: 1px;
+    background: #000;
+  }
+  & a {
+    display: block;
+  }
+}
+#drawer-checkbox:checked ~ .gnav .menu li  {
+  left: 0;
+  opacity: 1;
+  transition: left .7s ease-in-out 0s,  opacity .7s ease-in-out 0s;
+
+    &:nth-of-type(2) {
+      transition: left .7s ease-in-out 0.05s,  opacity .7s ease-in-out 0.05s;
+        }
+    &:nth-of-type(3) {
+      transition: left .7s ease-in-out 0.1s,  opacity .7s ease-in-out 0.1s;
+    }
+    &:nth-of-type(4) {
+      transition:  left .7s ease-in-out 0.15s,  opacity .7s ease-in-out 0.15s;
+    }
+    &:nth-of-type(5) {
+      transition:  left .7s ease-in-out 0.2s,  opacity .7s ease-in-out 0.2s;
+    }
+}
+
+#drawer-checkbox:checked ~ .gnav .menu li::after  {
+  width: 0;
+  transition: 2s;
+}
+
+
+/******** オーバーレイ **********/
+.overlay {
+  content: '';
+  visibility: hidden;
+  backface-visibility:hidden;
+  position: fixed;
+  /*   メニューオープン時に出てくるカバーの重なり順 */
+  z-index: 20;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out 0s;
+}
+#drawer-checkbox:checked ~ .overlay {
+  visibility: visible;
+  transition: all 0.5s ease-in-out 0s;
+}
+
+
+/******** ドロワーボタン **********/
+#drawer-btn {
+  position: fixed;
+  display: inline-block;
+  top: 20px;
+  right: 25px;
+  height: 50px;
+  width: 30px;
+  cursor: pointer;
+  z-index: 100;
+
+  & span {
+  position: absolute;
+  transition: all 0.7s ease-in-out;
+  background:  #fff;
+  display: block;
+  height: 1px;
+  width: 100%;
+  &:nth-of-type(1) {
+    top: 10px;
+    &::before {
+      @include whiteDot();
+      top: 10;
+      animation: navShadow 2s cubic-bezier(.79,.17,.15,.96) infinite;
+      animation-fill-mode : none
+
+    }
+  }
+  &:nth-of-type(2) {
+    top: 24px;
+    &::before {
+      @include whiteDot();
+      top: 24;
+      animation: navShadow 2s .1s cubic-bezier(.79,.17,.15,.96) infinite;
+      animation-fill-mode : none
+    }
+  }
+  &:nth-of-type(3) {
+    top: 38px;
+    &::before {
+      @include whiteDot();
+      top: 38;
+      animation: navShadow 2s .2s cubic-bezier(.79,.17,.15,.96) infinite;
+      animation-fill-mode : none
+
+        }
+  }
+}
+}
+
+.bgWhite {
+  & #drawer-btn span {
+    background: #191919;;
+}
+}
+
+#drawer-checkbox:checked ~ #drawer-btn span {
+  background: #191919;
+}
+
+@keyframes navShadow {
+  0% {
+    transform: translateX(0);
+    background-color: #fff;
+  }
+  to {
+    transform: translateX(30px);
+    background-color: #fff;
+  }
+}
+
+#drawer-checkbox:checked ~ #drawer-btn span:nth-of-type(1) {
+  top: 24px;
+  transform: rotate(45deg);
+}
+#drawer-checkbox:checked ~ #drawer-btn span:nth-of-type(2) {
+  opacity: 0;
+}
+#drawer-checkbox:checked ~ #drawer-btn span:nth-of-type(3) {
+  top: 24px;
+  transform: rotate(135deg);
+}
+
+
+
+@include media-up() {
+  .header {
+    padding-top: 40px;
+    padding-bottom: 30px;
+    font-size: 1.6rem;
+    text-align: center;
+  }
+  .gnav {
+    position: static;
+   // top: auto;  /*jsかくつき防止*/
+    z-index: 40;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    padding-top: 0;
+    background:transparent;
+    transition: none; /*jsカクツキ防止*/
+  }
+
+ .gnav.standby {
+    position: fixed;
+    transform: translateY(-100%);
+    left: 0;
+  //  transition: 1s; だめ
+    background: $fc-primary; 
+    //standbyのうちからbgカラー入れとかないとカクツク！！！！！
+  }
+
+  .gnav.fixed {
+    transform: translateY( 0 );
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.07);
+    //background: $fc-primary;
+  }
+
+  .header__logo {
+    height: 40px;
+    img {
+      width: 70px;
+    }
+  }
+  .menu {
+  display: flex;
+  margin-bottom: .7rem;
+  }
+  .menu li {
+    left: 0;
+    opacity: 1;
+    font-size: 1.65rem;
+    color: #fff;
+    width: calc( 100% / 5 );
+    text-align: center;
+    position: relative;
+    transition: 0.2s;
+
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 60%;
+      height: 1px;
+      background: #fff;
+      position: absolute;
+      // top: 25px;
+      left: 50%;
+      bottom: 10px;  
+      transform: translateX(-50%);
+
+    }
+
+    &:hover {
+      opacity: .7;
+      &::after {
+        opacity: .7;
+      }
+    }
+
+  }
+
+  #drawer-checkbox,
+  #drawer-btn {
+    display: none;
+    visibility: hidden;
+  }
+}

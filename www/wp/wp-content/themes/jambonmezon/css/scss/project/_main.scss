@@ -1,0 +1,349 @@
+.content__ttl {
+  font-family: $ff-din;
+  color: $fc-primary;
+  font-size: 24px;
+  text-align: center;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+@include media-up() {
+	.content__title{
+		margin-bottom: 30px;
+	}
+}
+
+/******************
+ INFORMATION
+*******************************/
+.information {
+  width: 450px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 16px;
+  letter-spacing: .1rem;
+  font-family: $ff-gothic;
+
+dt {
+    float: none;
+  }
+dd {
+  margin-left: 0;
+  &:not(:last-child){
+    margin-bottom: 1.5rem;
+  }
+}  
+}
+.information__note {
+  text-align: center;
+}
+
+@include media-up() {
+  .information {
+    width: 600px;
+  dt {
+      float: left;
+    }
+  dd {
+    margin-left: 13rem;
+  }  
+  }
+  }
+
+/******************
+ ABOUT
+*******************************/
+.about__wrap {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  color: $fc-wt;
+  font-family: $ff-mincho;
+  width: 100%;
+  background: $cr-block;
+}
+.about__subttl {
+  text-align: center;
+  margin-bottom: 50px;
+  & img {
+    max-width: 200px;
+  }
+
+  &.about__subttl--small {
+    & img {
+      max-width: 160px;
+    }
+  }
+}
+.about__txt,
+.about__imgBox {
+  margin-bottom: 50px;
+}
+.about__txt {
+  letter-spacing: .09rem;
+  line-height: 1.9;
+  font-feature-settings: "palt";
+  text-align: justify;
+}
+
+.about__imgBox {
+  position: relative;
+  & .img__old {
+    &::after {
+      content:"創業当時の様子と現在のスタッフ";
+      font-size: 11px;
+      display: inline-block;
+      margin-left: 0;
+      margin-top: 10px;
+    }
+  }
+& .img__new {
+  padding-top: 15px;
+}
+}
+.about__lv3Ttl {
+  margin-top: 30px;
+  margin-bottom: 5px;
+  font-weight: normal;
+  font-size: inherit;
+}
+
+
+@include media-up() {
+  .about__wrap {
+    padding-top:90px;
+    padding-bottom: 90px;
+  }  
+  .about__Unit {
+    display: flex;
+    justify-content: space-between;
+  }
+  .about__subttl {
+    text-align: center;
+    margin-bottom: 50px;
+    & img {
+      max-width: 250px;
+    }
+  
+    &.about__subttl--small {
+      & img {
+        max-width: 190px;
+      }
+    }
+  }
+  
+  .about__txt {
+    width: 40%;
+    font-size: 1.3rem;
+    &.about__txt--2n  {
+      width: 42%;
+    }
+  }
+  .about__imgBox {
+    position: relative;
+    width: 58%;
+    & .img__old {
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 1;
+      width: 330px;
+      &::after {
+        display: block;
+        text-align: right;
+        margin-top: 0;
+      }
+    }
+    & .img__new {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 330px;
+      padding-top: 0;
+    }
+
+    &.about__imgBox__small {
+      width: 54%;
+    }
+  }
+  }
+
+  @include media-up(lg) {
+    .about__imgBox {
+    .img__old {
+      &::after {
+        text-align: left;
+        margin-left: 60px;
+        margin-top: 10px;
+      }
+    }
+  }
+  }
+
+/******************
+ CONTACT
+*******************************/
+//contact form7
+.wpcf7-not-valid-tip {
+  font-size: 10px !important;
+  line-height: 1;
+}
+_:lang(x)::-ms-backdrop, .wpcf7-not-valid-tip { /* IE */
+  font-family: serif;
+  }
+.wpcf7 textarea {
+  height: 140px !important;
+}
+.wpcf7 input[type="submit"],
+.wpcf7 input[type="button"]{
+  width: 100%;
+}
+.wpcf7 input[type="submit"].wpcf7c-elm-step2{
+  background: #54a836;
+}
+span.wpcf7-not-valid-tip {
+  color: yellow;
+}
+div.wpcf7-response-output {
+  margin: 1rem .5em 1em;
+  background: #fff;
+  color: #333;
+}
+
+input.wpcf7c-conf, textarea.wpcf7c-conf {
+  background: #eee !important;
+  border: solid 1px #eee;
+  color: #666;
+}
+
+.wpcf7 textarea {
+  display: block; //余白対策
+}
+//contact form7 kokomade
+
+.contact .content__inner {
+  padding-left: 0;
+  padding-right: 0;
+}
+@include media-down(sm) {
+  .contact__bg {
+  padding-top: 300%;
+}
+}
+
+.contact__bg {
+  position: relative;
+  width: 100%;
+  padding-top: 1030px;
+  height: 0;
+  background-image: url(../img/29.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  color: $fc-wt;
+  font-family: $ff-mincho;
+}
+.contact__formWrap {
+  position: absolute;
+  top: 300px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 100%;
+  width: 500px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.contact__sbttl {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+.contact__note {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  @include good_ft();
+}
+.form {
+  dl {
+    position: relative;
+  }
+  dt {
+    position: absolute;
+    width: auto;
+    top: -2px;
+    left:0;
+    text-align: left;
+    font-size: 1.3rem;
+  }
+  dd {
+    padding-top: 20px;
+  }
+  &__btn{
+    width: 100%;
+    padding: 5px 15px;
+    background: #366625;
+    font-size: 20px;
+    border: none;
+    color: inherit;
+    font-family: inherit;
+    cursor: pointer;
+    margin-top: 15px;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+  .hp__space {
+    display: inline-block;
+    width: 30px;
+  }
+}
+
+@include media-up() {
+  .contact .content__inner {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  
+  .contact__bg {
+    padding-top: 120%;
+  }
+  .contact__formWrap {
+    top: 440px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 100%;
+    width: 470px;
+  }
+  .contact__sbttl {
+    font-size: 3rem;
+    font-weight: normal;
+    margin-bottom: 15px;
+  }
+  .contact__note {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+  }
+  
+  .form {
+    dt {
+      position: absolute;
+      width: 120px;
+      top: 15px;
+      left: -135px;
+      text-align: right;
+    }
+    dd {
+      padding-top: 11px;
+
+    }
+  }
+  .form__btn {
+    margin-top: 10px;
+  }
+  }
+
+  @include media-up(lg) {
+    .contact__formWrap {
+    top: 570px;
+    }
+  }

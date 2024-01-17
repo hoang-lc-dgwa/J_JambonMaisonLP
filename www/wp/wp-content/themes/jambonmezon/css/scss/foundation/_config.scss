@@ -1,0 +1,51 @@
+
+/* サイト幅 */
+//$site_inner: 1100px; /* 1080 + (15px×2) */
+
+/* フォントファミリー */
+@font-face {
+  font-family: 'Din';
+  src: url('../font/din1451alt-G.woff') format('woff'),
+  url('../font/din1451alt G.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'shippori';
+  src: url('../font/sippori/font.woff') format('woff'),
+  url('../font/sippori/font.ttf') format('truetype');
+}
+
+$ff-gothic:'Noto Sans JP', sans-serif, "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+// $ff-mincho: 'Noto Serif JP', serif;
+$ff-mincho: '游明朝','游明朝体',YuMincho,'Yu Mincho','ヒラギノ明朝 ProN' , 'Hiragino Mincho ProN' , HiraMinProN-W3 , 'TakaoEx明朝' , TakaoExMincho , 'MotoyaLCedar' , 'Droid Sans Japanese' , serif;
+$ff-din: 'Din', sans-serif;
+
+
+/* フォントカラー */
+$fc-bk: #000;
+$fc-wt: #fff;
+$fc-primary: #366625;
+
+/* フォントサイズ */
+$fz_default : 1.5rem;
+
+/* フォントウェイト */
+$fw-default: 400;
+
+/* 行の高さ */
+$lh-default: 1.8;
+
+/* 背景・ブロック区切り */
+$cr-bg:#fff;
+$cr-block: #366625;
+
+/* テーブルボーダー */
+$cr-table: #4c4f35;
+
+/* オパシティ */
+$opacity : .7;
+
+/* フォーム */
+$cr-form-bd: #4c4f35;
+$cr-form-bd_avtive : #5bedf7;
+$cr-btn: pink;
+
