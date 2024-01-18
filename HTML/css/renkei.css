@@ -1,0 +1,694 @@
+@charset "UTF-8";
+@keyframes slick-active {
+  0% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@media print, screen and (min-width: 641px) {
+  .rk-sp {
+    display: none !important;
+  }
+}
+@media print, screen and (max-width: 640px) {
+  .rk-pc {
+    display: none !important;
+  }
+}
+.renkei-lp {
+  font-weight: 500;
+}
+.renkei-lp .rk-inner {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1140px;
+  padding-left: 30px;
+  padding-right: 30px;
+  max-width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.renkei-lp .rk-mainVisual {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+.renkei-lp .rk-mainVisual__title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  bottom: 70px;
+  font-family: "shippori", "serif";
+  max-width: 46%;
+  width: 600px;
+  transform: translate(-50%, 30px);
+  opacity: 0;
+  transition: all 0.8s ease 0.2s;
+}
+.renkei-lp .rk-mainVisual__slider {
+  height: 100vh;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.renkei-lp .rk-mainVisual__slider .item {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+}
+.renkei-lp .rk-mainVisual__slider .item:nth-child(1) {
+  background-image: url("../img/renkei/mainVisual_img01.jpg");
+}
+.renkei-lp .rk-mainVisual__slider .item:nth-child(2) {
+  background-image: url("../img/renkei/mainVisual_img02.jpg");
+}
+.renkei-lp .rk-mainVisual__slider .item:nth-child(3) {
+  background-image: url("../img/renkei/mainVisual_img03.jpg");
+}
+.renkei-lp .rk-mainVisual__slider .item:nth-child(4) {
+  background-image: url("../img/renkei/mainVisual_img04.jpg");
+}
+.renkei-lp .rk-mainVisual__slider .item.item-on {
+  animation: slick-active 11s linear forwards;
+}
+.renkei-lp .rk-mainVisual__slider .slick-dots {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -10px);
+}
+.renkei-lp .rk-mainVisual__slider .slick-dots li {
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  background: #fff;
+}
+.renkei-lp .rk-mainVisual__slider .slick-dots li button {
+  display: none;
+}
+.renkei-lp .rk-mainVisual__slider .slick-dots li.slick-active {
+  background: #0D4B1F;
+}
+.renkei-lp .rk-mainVisual.is-show .rk-mainVisual__title {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+.renkei-lp .rk-mainVisual.is-show .rk-mainVisual__slider {
+  opacity: 1;
+}
+.renkei-lp .rk-intro {
+  background: #fff;
+  padding: 80px 0;
+}
+.renkei-lp .rk-intro__title {
+  max-width: 335px;
+  margin: 0 auto 60px;
+}
+.renkei-lp .rk-intro__copy {
+  max-width: 240px;
+  margin: 0 auto;
+}
+.renkei-lp .rk-profile {
+  position: relative;
+}
+.renkei-lp .rk-profile__bg {
+  height: 80vh;
+}
+.renkei-lp .rk-profile__bg img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.renkei-lp .rk-profile__inner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+.renkei-lp .rk-profile__body {
+  width: 415px;
+  width: 500px;
+  max-width: 70vw;
+  height: 100%;
+  margin-left: auto;
+  margin-top: 78px;
+  height: calc(80vh - 78px);
+  position: relative;
+}
+.renkei-lp .rk-profile-box {
+  height: 100%;
+  background: #fff;
+  position: relative;
+  overflow-y: auto;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+.renkei-lp .rk-profile-box::-webkit-scrollbar {
+  width: 10px;
+}
+.renkei-lp .rk-profile-box::-webkit-scrollbar-track {
+  background: #efefef;
+}
+.renkei-lp .rk-profile-box::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+.renkei-lp .rk-profile-box__inner {
+  padding: 35px;
+}
+.renkei-lp .rk-profile__title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-98%);
+}
+.renkei-lp .rk-profile__title img {
+  width: 92px;
+  width: 23%;
+}
+.renkei-lp .rk-profile__name {
+  width: 190px;
+  margin: 0 auto 25px;
+}
+.renkei-lp .rk-profile__photo {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+.renkei-lp .rk-profile__photo img {
+  width: calc(50% - 0.5rem);
+}
+.renkei-lp .rk-profile__lbl {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.renkei-lp .rk-profile__lbl span {
+  font-size: 15px;
+  line-height: 1.75;
+  padding: 5px 20px;
+  border-radius: 20px;
+  background: #0D4B1F;
+  font-weight: bold;
+  color: #FFF;
+  display: inline-flex;
+}
+.renkei-lp .rk-profile dl {
+  margin-top: 10px;
+}
+.renkei-lp .rk-profile__lead {
+  margin-top: 10px;
+}
+.renkei-lp .rk-profile a {
+  color: #40BFEC;
+  text-decoration: underline;
+}
+.renkei-lp .rk-profile a:hover {
+  text-decoration: none;
+}
+.renkei-lp .rk-unit:nth-child(n+2) {
+  padding-top: 80px;
+  position: relative;
+}
+.renkei-lp .rk-unit:nth-child(n+2)::before {
+  position: absolute;
+  top: 80px;
+  content: "";
+  z-index: 1;
+  background: #0D4B1F;
+  height: 2px;
+  width: 160px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.renkei-lp .rk-front {
+  background: #fff;
+  padding: 80px 0;
+}
+.renkei-lp .rk-front__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.renkei-lp .rk-front__title img {
+  height: 50px;
+  width: auto;
+}
+.renkei-lp .rk-front__sub-title {
+  color: #0D4B1F;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 130%;
+  font-family: "Noto Sans JP", sans-serif, "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+  letter-spacing: 0.05em;
+}
+.renkei-lp .rk-front__copy {
+  max-width: 490px;
+  margin: 0 auto;
+}
+.renkei-lp .rk-front__main {
+  max-width: 550px;
+  margin: 40px auto 0;
+}
+.renkei-lp .rk-case {
+  background: #0D4B1F;
+  color: #FFF;
+  padding: 40px 0 80px;
+  font-family: "Noto Sans JP", sans-serif, "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+  position: relative;
+}
+.renkei-lp .rk-case::after {
+  content: "";
+  z-index: 1;
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-top: 35px solid #0D4B1F;
+  top: 99.99%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.renkei-lp .rk-case__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+  font-weight: bold;
+  font-size: 100%;
+}
+.renkei-lp .rk-case__title .title-num {
+  font-size: 220%;
+  width: 170px;
+  flex-shrink: 0;
+}
+.renkei-lp .rk-case__title .title-txt {
+  padding-left: 50px;
+  border-left: 2px solid #FFF;
+  font-size: 200%;
+}
+.renkei-lp .rk-case__copy {
+  max-width: 490px;
+  margin: 0 auto;
+  font-weight: 500;
+}
+.renkei-lp .rk-case-flow {
+  padding-top: 25px;
+  max-width: 700px;
+  max-width: 750px;
+  margin: 0 auto;
+  font-weight: 500;
+}
+.renkei-lp .rk-case-flow__item {
+  margin-top: 40px;
+}
+.renkei-lp .rk-case-flow__row {
+  display: flex;
+}
+.renkei-lp .rk-case-flow__img {
+  width: 268px;
+  width: 290px;
+  max-width: 40%;
+  flex-shrink: 0;
+}
+.renkei-lp .rk-case-flow__desc {
+  flex-grow: 1;
+  padding-right: 25px;
+}
+.renkei-lp .rk-case-flow__hdg {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 12px;
+  font-size: 130%;
+  font-weight: bold;
+  line-height: 30px;
+}
+.renkei-lp .rk-case-flow__hdg .hdg-step {
+  background: #fff;
+  color: #0D4B1F;
+  border-radius: 30px;
+  min-width: 100px;
+  flex-shrink: 0;
+  text-align: center;
+}
+.renkei-lp .rk-interview {
+  background: #fff;
+  padding: 100px 0 80px;
+  font-family: "Noto Sans JP", sans-serif, "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+}
+.renkei-lp .rk-interview__title {
+  margin-bottom: 30px;
+  text-align: center;
+  color: #0D4B1F;
+  font-size: 250%;
+  line-height: 1.5;
+  font-weight: bold;
+}
+.renkei-lp .rk-interview__catalogue {
+  max-width: 640px;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+.renkei-lp .rk-interview__row {
+  max-width: 700px;
+  padding-top: 30px;
+  display: flex;
+  margin: 0 auto;
+}
+.renkei-lp .rk-interview__per {
+  width: 270px;
+  flex-shrink: 0;
+}
+.renkei-lp .rk-interview__per img {
+  border-radius: 50%;
+}
+.renkei-lp .rk-interview__per ficaption {
+  font-size: 120%;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 20px;
+  line-height: 1.4;
+  text-align: center;
+  display: block;
+}
+.renkei-lp .rk-interview__desc {
+  padding-left: 40px;
+  flex-grow: 1;
+}
+.renkei-lp .rk-interview__desc h3 {
+  font-weight: bold;
+  font-size: 140%;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+.renkei-lp .rk-contact {
+  padding: 80px 0;
+}
+.renkei-lp .rk-contact__title {
+  max-width: 580px;
+  margin: 0 auto 60px;
+}
+.renkei-lp .rk-contact__btn {
+  max-width: 550px;
+  margin: 0 auto;
+}
+.renkei-lp .rk-contact__btn a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0D4B1F;
+  height: 70px;
+  transition: 0.3s ease;
+}
+.renkei-lp .rk-contact__btn a img {
+  max-width: 180px;
+  width: 90%;
+}
+.renkei-lp .rk-contact__bnr {
+  max-width: 760px;
+  margin: 60px auto 0;
+}
+.renkei-lp .rk-contact__bnr a {
+  transition: 0.3s ease;
+}
+.renkei-lp .rk-gallery {
+  overflow: hidden;
+}
+@media print, screen and (max-width: 768px) {
+  .renkei-lp .rk-inner {
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .renkei-lp .rk-intro {
+    padding: 60px 0;
+  }
+  .renkei-lp .rk-intro__title {
+    max-width: 300px;
+    margin: 0 auto 40px;
+  }
+  .renkei-lp .rk-intro__copy {
+    max-width: 200px;
+  }
+  .renkei-lp .rk-profile__body {
+    width: 400px;
+    margin-top: 70px;
+    height: calc(80vh - 70px);
+    margin-right: -10px;
+  }
+  .renkei-lp .rk-profile-box__inner {
+    padding: 25px;
+  }
+  .renkei-lp .rk-front {
+    padding: 60px 0;
+  }
+  .renkei-lp .rk-front__title {
+    margin-bottom: 30px;
+  }
+  .renkei-lp .rk-front__title img {
+    height: 42px;
+  }
+  .renkei-lp .rk-front__sub-title {
+    margin-bottom: 20px;
+  }
+  .renkei-lp .rk-case {
+    padding: 30px 0 60px;
+  }
+  .renkei-lp .rk-case__title .title-num {
+    font-size: 200%;
+    width: 150px;
+    flex-shrink: 0;
+  }
+  .renkei-lp .rk-case__title .title-txt {
+    font-size: 180%;
+    line-height: 1.5;
+  }
+  .renkei-lp .rk-case-flow {
+    padding-top: 15px;
+  }
+  .renkei-lp .rk-case-flow__item {
+    margin-top: 30px;
+  }
+  .renkei-lp .rk-case-flow__hdg {
+    font-size: 125%;
+  }
+  .renkei-lp .rk-interview {
+    padding: 80px 0 60px;
+  }
+  .renkei-lp .rk-interview__title {
+    font-size: 200%;
+  }
+  .renkei-lp .rk-interview__catalogue {
+    max-width: 600px;
+  }
+  .renkei-lp .rk-interview__row {
+    padding-top: 30px;
+  }
+  .renkei-lp .rk-interview__desc {
+    padding-left: 30px;
+  }
+  .renkei-lp .rk-interview__desc h3 {
+    font-size: 130%;
+  }
+  .renkei-lp .rk-contact {
+    padding: 60px 0;
+  }
+  .renkei-lp .rk-contact__title {
+    max-width: 540px;
+    margin: 0 auto 40px;
+  }
+  .renkei-lp .rk-contact__btn {
+    max-width: 550px;
+  }
+  .renkei-lp .rk-contact__bnr {
+    max-width: 700px;
+    margin: 40px auto 0;
+  }
+}
+@media print, screen and (max-width: 640px) {
+  .renkei-lp {
+    font-size: 14px;
+  }
+  .renkei-lp .rk-inner {
+    max-width: 600px;
+  }
+  .renkei-lp .rk-unit:nth-child(n+2) {
+    padding-top: 50px;
+    position: relative;
+  }
+  .renkei-lp .rk-unit:nth-child(n+2)::before {
+    top: 50px;
+    height: 1px;
+    width: 120px;
+  }
+  .renkei-lp .rk-intro {
+    padding: 50px 0;
+  }
+  .renkei-lp .rk-intro__title {
+    max-width: 260px;
+    margin: 0 auto 40px;
+  }
+  .renkei-lp .rk-intro__copy {
+    max-width: 180px;
+  }
+  .renkei-lp .rk-profile__bg {
+    height: 94vh;
+  }
+  .renkei-lp .rk-profile__body {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    margin-left: 0;
+    margin-top: 44vh;
+    height: 50vh;
+  }
+  .renkei-lp .rk-profile-box::-webkit-scrollbar {
+    width: 10px;
+  }
+  .renkei-lp .rk-profile-box::-webkit-scrollbar-track {
+    background: #efefef;
+  }
+  .renkei-lp .rk-profile-box::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+  }
+  .renkei-lp .rk-profile-box__inner {
+    padding: 30px 20px;
+  }
+  .renkei-lp .rk-profile__title img {
+    width: 35%;
+  }
+  .renkei-lp .rk-profile__name {
+    width: 190px;
+    margin: 0 auto 25px;
+  }
+  .renkei-lp .rk-front {
+    padding: 50px 0;
+  }
+  .renkei-lp .rk-front__title {
+    margin-bottom: 25px;
+  }
+  .renkei-lp .rk-front__title img {
+    height: 28px;
+  }
+  .renkei-lp .rk-front__sub-title {
+    margin-bottom: 15px;
+    font-size: 115%;
+  }
+  .renkei-lp .rk-front__main {
+    margin: 25px auto 0;
+  }
+  .renkei-lp .rk-case {
+    padding: 30px 0 50px;
+  }
+  .renkei-lp .rk-case::after {
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 25px solid #0D4B1F;
+  }
+  .renkei-lp .rk-case__title {
+    margin-bottom: 25px;
+    flex-direction: column;
+    text-align: center;
+  }
+  .renkei-lp .rk-case__title .title-num {
+    font-size: 180%;
+    width: 100%;
+    text-align: center;
+  }
+  .renkei-lp .rk-case__title .title-txt {
+    padding-left: 0;
+    border-left: none;
+    font-size: 150%;
+  }
+  .renkei-lp .rk-case-flow {
+    padding-top: 0;
+  }
+  .renkei-lp .rk-case-flow__item {
+    margin-top: 40px;
+  }
+  .renkei-lp .rk-case-flow__row {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .renkei-lp .rk-case-flow__img {
+    width: 100%;
+    max-width: 100%;
+  }
+  .renkei-lp .rk-case-flow__desc {
+    padding-right: 0;
+  }
+  .renkei-lp .rk-case-flow__hdg {
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 110%;
+  }
+  .renkei-lp .rk-case-flow__hdg .hdg-step {
+    min-width: 80px;
+  }
+  .renkei-lp .rk-interview {
+    padding: 60px 0 50px;
+  }
+  .renkei-lp .rk-interview__title {
+    margin-bottom: 25px;
+    font-size: 150%;
+  }
+  .renkei-lp .rk-interview__catalogue {
+    padding-bottom: 20px;
+  }
+  .renkei-lp .rk-interview__row {
+    padding-top: 20px;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .renkei-lp .rk-interview__per {
+    width: 100%;
+  }
+  .renkei-lp .rk-interview__per img {
+    max-width: 60%;
+    margin: 0 auto;
+    display: block;
+  }
+  .renkei-lp .rk-interview__per ficaption {
+    font-size: 110%;
+    margin-top: 15px;
+  }
+  .renkei-lp .rk-interview__desc {
+    padding-left: 0;
+  }
+  .renkei-lp .rk-interview__desc h3 {
+    font-size: 125%;
+  }
+  .renkei-lp .rk-contact {
+    padding: 50px 0;
+  }
+  .renkei-lp .rk-contact__title {
+    max-width: 580px;
+    margin: 0 auto 30px;
+  }
+  .renkei-lp .rk-contact__btn a {
+    height: 50px;
+  }
+  .renkei-lp .rk-contact__btn a img {
+    max-width: 120px;
+  }
+  .renkei-lp .rk-contact__bnr {
+    margin: 30px auto 0;
+  }
+}

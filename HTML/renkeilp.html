@@ -45,10 +45,12 @@
   <link rel='stylesheet' id='slick-css' href='https://www.jambon-maison.com/wp/wp-content/themes/jambonmezon/css/slick.css?ver=5.4.14' type='text/css' media='all' />
   <!-- <link rel='stylesheet' id='common-css-css' href='https://www.jambon-maison.com/wp/wp-content/themes/jambonmezon/css/style.css?ver=5.4.14' type='text/css' media='all' /> -->
   <link rel='stylesheet' id='common-css-css' href='./css/style.css' type='text/css' media='all' />
+  <link rel='stylesheet' id='renkei-css' href='./css/renkei.css' type='text/css' media='all' />
   <script type='text/javascript' src='https://www.jambon-maison.com/wp/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp'></script>
   <script type='text/javascript' src='https://www.jambon-maison.com/wp/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
   <script type='text/javascript' src='https://www.jambon-maison.com/wp/wp-content/themes/jambonmezon/js/slick.min.js?ver=5.4.14'></script>
   <script type='text/javascript' src='https://www.jambon-maison.com/wp/wp-content/themes/jambonmezon/js/app.js?ver=5.4.14'></script>
+  <script type='text/javascript' src='./js/renkei.js'></script>
   <link rel='https://api.w.org/' href='https://www.jambon-maison.com/wp-json/' />
   <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.jambon-maison.com/wp/xmlrpc.php?rsd" />
   <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.jambon-maison.com/wp/wp-includes/wlwmanifest.xml" />
@@ -86,15 +88,14 @@
     </header><!-- /header -->
     <main class="main">
       <div class="renkei-lp">
-        <div class="rk-mainVisual">
-          <ul class="rk-mainVisual__slider">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-          <h2 class="rk-mainVisual__copy js-hide"><img src="./img/renkei/mainVisual_title.svg" alt="ジャンボンメゾン ura-menu"></h2>
+        <div class="rk-mainVisual js-rk-mainVisual">
+          <div class="rk-mainVisual__slider" id="rk-mainVisual-bg">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+          </div>
+          <h2 class="rk-mainVisual__title js-hide-title"><img src="./img/renkei/mainVisual_title.svg" alt="ジャンボンメゾン ura-menu"></h2>
         </div>
         <!-- /#rk-mainVisual -->
         <div class="rk-intro">
@@ -105,15 +106,19 @@
         </div>
         <!-- /#rk-intro -->
         <div class="rk-profile">
-          <div class="rk-inner">
-            <div class="rk-profile__inner">
-              <div class="rk-profile__bg"><img src="./img/renkei/profile_bg.jpg" alt=""></div>
+          <div class="rk-profile__bg">
+            <img src="./img/renkei/profile_bg.jpg" alt="" class="rk-pc">
+            <img src="./img/renkei/profile_bg_sp.jpg" alt="" class="rk-sp">
+          </div>
+          <div class="rk-profile__inner">
+            <div class="rk-inner">
               <div class="rk-profile__body">
+                <h2 class="rk-profile__title"><img src="./img/renkei/profile_title.svg" alt="Profile"></h2>
                 <div class="rk-profile-box">
                   <div class="rk-profile-box__inner">
-                    <h2 class="rk-profile__title"><img src="./img/renkei/profile_title.svg" alt="Profile"></h2>
                     <h3 class="rk-profile__name"><img src="./img/renkei/profile_name.svg" alt="髙崎 かおり Kaori Takasaki"></h3>
                     <p class="rk-profile__copy">1993年に父が独学でハム工房を創業。2代目の髙﨑かおりは、従業員を全員女性にして、女性の感性と働き方を商品・組織に取り入れ、女性の活躍の場創りに取り組んでいる。ジャンボンメゾン30年ビジョンと称し、3つのブランドを柱に事業を展開。2019年からは、「量り売りマルシェ」の活動を始め、女性の視点を生かしたマネジメントや、SDGsを見据えた活動を実施中。</p>
+                    <h4 class="rk-profile__lbl"><span>もっと見る</span></h4>
                     <figure class="rk-profile__photo">
                       <img src="./img/renkei/profile_img01.jpg" alt="">
                       <img src="./img/renkei/profile_img02.jpg" alt="">
@@ -161,7 +166,6 @@
                 </div>
               </div>
             </div>
-            <div class="rk-profile__copy"><img src="./img/renkei/profile_copy.svg" alt="ジャンボンメゾンでは、食を伝え・次世代に繋げる活動として、代表の高崎が産学連携の取り組みや講演、企業コラボによる商品開発など行っております。"></div>
           </div>
         </div>
         <!-- /#rk-profile -->
@@ -183,7 +187,7 @@
                 <div class="rk-case__inner">
                   <h2 class="rk-case__title">
                     <span class="title-num">Case #1</span>
-                    <span class="title-txt">仙台農業テック＆カフェ・パティシエ専門学校</span>
+                    <span class="title-txt">仙台農業テック＆<br class="rk-sp">カフェ・パティシエ専門学校</span>
                   </h2>
                   <p class="rk-case__copy">料理人、飲食関係の仕事を目指す学生を対象に、「ハムの端材を利用したクリスマスギフトに入れるリアップ品」を課題として提示し新商品のアイデアを企画・試作して頂きました。学生からのアイデアをベースに量産可能なレシピを構築し、開発から販売までのプロセスを学んで頂きました。</p>
                   <div class="rk-case-flow">
@@ -232,11 +236,11 @@
               <div class="rk-inner">
                 <div class="rk-interview__inner">
                   <h2 class="rk-interview__title">藤崎百貨店<br>2023年お歳暮として販売されました</h2>
-                  <div class="rk-interview__catalogue"><img src="./img/renkei/g1_img01.jpg" alt=""></div>
+                  <div class="rk-interview__catalogue"><img src="./img/renkei/g1_img01.jpg" alt="もっと宮城が呂すきになる。"></div>
                   <div class="rk-interview__row">
                     <div class="rk-interview__per">
                       <figure>
-                        <img src="./img/renkei/g1_per.png" alt="">
+                        <img src="./img/renkei/g1_per.png" alt="仙台農業テック＆カフェ・パティシエ専門学校 石川一也　副校長">
                         <ficaption>仙台農業テック＆<br>カフェ・パティシエ専門学校<br>石川一也　副校長</ficaption>
                       </figure>
                     </div>
@@ -251,6 +255,11 @@
             <!-- /#rk-interview 1 -->
             <div class="rk-gallery">
               <div class="rk-gallery__list js-rk-gallery">
+                <div class="rk-gallery__item"><img src="./img/renkei/g1_gallery01.jpg" alt=""></div>
+                <div class="rk-gallery__item"><img src="./img/renkei/g1_gallery02.jpg" alt=""></div>
+                <div class="rk-gallery__item"><img src="./img/renkei/g1_gallery03.jpg" alt=""></div>
+                <div class="rk-gallery__item"><img src="./img/renkei/g1_gallery04.jpg" alt=""></div>
+                <div class="rk-gallery__item"><img src="./img/renkei/g1_gallery05.jpg" alt=""></div>
                 <div class="rk-gallery__item"><img src="./img/renkei/g1_gallery01.jpg" alt=""></div>
                 <div class="rk-gallery__item"><img src="./img/renkei/g1_gallery02.jpg" alt=""></div>
                 <div class="rk-gallery__item"><img src="./img/renkei/g1_gallery03.jpg" alt=""></div>
@@ -330,7 +339,7 @@
                   <div class="rk-interview__row">
                     <div class="rk-interview__per">
                       <figure>
-                        <img src="./img/renkei/g2_per.png" alt="">
+                        <img src="./img/renkei/g2_per.png" alt="東北生活文化大学短期大学部 生活文化学科食物栄養学専攻 青柳 公大　先生">
                         <ficaption>東北生活文化大学短期大学部<br>生活文化学科食物栄養学専攻<br>青柳 公大　先生</ficaption>
                       </figure>
                     </div>
@@ -345,6 +354,11 @@
             <!-- /#rk-interview 2 -->
             <div class="rk-gallery">
               <div class="rk-gallery__list js-rk-gallery">
+                <div class="rk-gallery__item"><img src="./img/renkei/g2_gallery01.jpg" alt=""></div>
+                <div class="rk-gallery__item"><img src="./img/renkei/g2_gallery02.jpg" alt=""></div>
+                <div class="rk-gallery__item"><img src="./img/renkei/g2_gallery03.jpg" alt=""></div>
+                <div class="rk-gallery__item"><img src="./img/renkei/g2_gallery04.jpg" alt=""></div>
+                <div class="rk-gallery__item"><img src="./img/renkei/g2_gallery05.jpg" alt=""></div>
                 <div class="rk-gallery__item"><img src="./img/renkei/g2_gallery01.jpg" alt=""></div>
                 <div class="rk-gallery__item"><img src="./img/renkei/g2_gallery02.jpg" alt=""></div>
                 <div class="rk-gallery__item"><img src="./img/renkei/g2_gallery03.jpg" alt=""></div>
@@ -424,7 +438,7 @@
                   <div class="rk-interview__row">
                     <div class="rk-interview__per">
                       <figure>
-                        <img src="./img/renkei/g3_per.png" alt="">
+                        <img src="./img/renkei/g3_per.png" alt="ローカルイノベーションスクール 早坂学長">
                         <ficaption>ローカルイノベーションスクール<br>早坂学長</ficaption>
                       </figure>
                     </div>
@@ -444,6 +458,11 @@
                 <div class="rk-gallery__item"><img src="./img/renkei/g3_gallery03.jpg" alt=""></div>
                 <div class="rk-gallery__item"><img src="./img/renkei/g3_gallery04.jpg" alt=""></div>
                 <div class="rk-gallery__item"><img src="./img/renkei/g3_gallery05.jpg" alt=""></div>
+                <div class="rk-gallery__item"><img src="./img/renkei/g3_gallery01.jpg" alt=""></div>
+                <div class="rk-gallery__item"><img src="./img/renkei/g3_gallery02.jpg" alt=""></div>
+                <div class="rk-gallery__item"><img src="./img/renkei/g3_gallery03.jpg" alt=""></div>
+                <div class="rk-gallery__item"><img src="./img/renkei/g3_gallery04.jpg" alt=""></div>
+                <div class="rk-gallery__item"><img src="./img/renkei/g3_gallery05.jpg" alt=""></div>
               </div>
             </div>
             <!-- /#rk-gallery 3 -->
@@ -452,7 +471,7 @@
         </div>
         <!-- /#rk-contact -->
         <div class="rk-contact">
-          <div class="rk-contact">
+          <div class="rk-inner">
             <div class="rk-contact__inner">
               <h2 class="rk-contact__title"><img src="./img/renkei/contact_title.svg" alt="ジャンボンメゾンとの取り組みについて、ご要望に合わせてコーディネートさせて頂きます。お気軽にお問い合わせください。"></h2>
               <div class="rk-contact__btn"><a href="https://www.jambon-maison.com/#contact"><img src="./img/renkei/contact_btn_txt.svg" alt="お問い合わせ"></a></div>
