@@ -224,9 +224,12 @@ $breakpoints-down: ('xxlg': 'print,screen and (max-width: 1450px)',
     &-box {
       height: 100%;
       background: #fff;
-      position: relative;
-      overflow-y: auto;
       box-shadow: 5px 5px 10px rgba(#000, 0.2);
+      position: relative;
+      overflow-y: scroll;
+      scrollbar-color: dark thin;
+      scrollbar-width: thin;
+      -webkit-overflow-scrolling: touch;
 
       &::-webkit-scrollbar {
         width: 10px;
@@ -578,6 +581,37 @@ $breakpoints-down: ('xxlg': 'print,screen and (max-width: 1450px)',
       padding-right: 20px;
     }
 
+
+
+    .rk-mainVisual {
+      height: 100vh;
+      max-height: 70vw;
+
+      &__slider {
+        height: 100vh;
+        max-height: 70vw;
+
+        .item {
+          height: 100vh;
+          max-height: 70vw;
+        }
+      }
+
+      &.is-show {
+        .rk-mainVisual {
+          &__title {
+            opacity: 1;
+            transform: translate(-50%, 0);
+          }
+
+          &__slider {
+            opacity: 1;
+          }
+        }
+
+      }
+    }
+
     .rk-intro {
       padding: 60px 0;
 
@@ -848,6 +882,7 @@ $breakpoints-down: ('xxlg': 'print,screen and (max-width: 1450px)',
           gap: 10px;
           margin-bottom: 10px;
           font-size: 110%;
+          margin-right: -10px;
 
           .hdg-step {
             min-width: 80px;
