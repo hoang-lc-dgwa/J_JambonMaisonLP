@@ -75,12 +75,6 @@ $breakpoints-down: ('xxlg': 'print,screen and (max-width: 1450px)',
     max-width: 1140px;
     padding-left: 30px;
     padding-right: 30px;
-    padding-left: 20px;
-    padding-right: 20px;
-
-    @include media-down(sm) {
-      max-width: 100%;
-    }
   }
 
   .rk-mainVisual {
@@ -581,8 +575,6 @@ $breakpoints-down: ('xxlg': 'print,screen and (max-width: 1450px)',
       padding-right: 20px;
     }
 
-
-
     .rk-mainVisual {
       height: 100vh;
       max-height: 70vw;
@@ -602,6 +594,7 @@ $breakpoints-down: ('xxlg': 'print,screen and (max-width: 1450px)',
           &__title {
             opacity: 1;
             transform: translate(-50%, 0);
+            bottom: 45px;
           }
 
           &__slider {
