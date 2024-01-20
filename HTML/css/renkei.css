@@ -26,9 +26,13 @@
   max-width: 1140px;
   padding-left: 30px;
   padding-right: 30px;
-  max-width: 100%;
   padding-left: 20px;
   padding-right: 20px;
+}
+@media print, screen and (max-width: 640px) {
+  .renkei-lp .rk-inner {
+    max-width: 100%;
+  }
 }
 .renkei-lp .rk-mainVisual {
   position: relative;
@@ -256,7 +260,7 @@
   letter-spacing: 0.05em;
 }
 .renkei-lp .rk-front__copy {
-  max-width: 490px;
+  max-width: 520px;
   margin: 0 auto;
 }
 .renkei-lp .rk-front__main {
