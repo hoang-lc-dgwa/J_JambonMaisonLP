@@ -5,9 +5,6 @@ function register_script() {
     wp_enqueue_script('slick', get_template_directory_uri() .'/js/slick.min.js'); 
     wp_enqueue_script('app', get_template_directory_uri() .'/js/app.js');
   }
-  if(is_page('renkei')) {
-    wp_enqueue_script('renkei', get_template_directory_uri() .'/js/renkei.js');
-  }
 }
 add_action('wp_enqueue_scripts', 'register_script');
 
@@ -17,9 +14,6 @@ function register_stylesheet() {
   wp_enqueue_style('common-css', get_template_directory_uri().'/css/style.css');
   if(is_page('loss')) {
     wp_enqueue_style('loss-css', get_template_directory_uri().'/css/loss.css');
-  }
-  if(is_page('renkei')) {
-    wp_enqueue_style('renkei-css', get_template_directory_uri().'/css/renkei.css');
   }
 }
 add_action('wp_enqueue_scripts', 'register_stylesheet');
