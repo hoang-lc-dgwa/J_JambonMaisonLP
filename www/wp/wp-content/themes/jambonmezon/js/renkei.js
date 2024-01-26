@@ -71,4 +71,9 @@ jQuery(function ($) {
       $("#rk-mainVisual-bg").slick("slickPlay");
     }
   );
+
+	$(".js-rk-viewmore-btn").click(function () {
+    $(this).parent().addClass("is-hidden");
+    $(".rk-profile__content").addClass("is-show");
+  });
 });
