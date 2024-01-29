@@ -1384,7 +1384,7 @@ input.wpcf7c-conf, textarea.wpcf7c-conf {
   overflow: hidden;
   /*IE*/
 }
-/* .slick.slick-initialized{ 
+/* .slick.slick-initialized{
  opacity: 1; } */
 .top_slide_on {
   animation: slick-active 11s linear forwards;
@@ -1423,4 +1423,9 @@ input.wpcf7c-conf, textarea.wpcf7c-conf {
 
 .grecaptcha-badge {
 	display: none !important;
+}
+
+.gnav .menu.content__inner {
+  padding-left: 0;
+  padding-right: 0;
 }

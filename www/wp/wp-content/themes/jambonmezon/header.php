@@ -42,6 +42,7 @@
             <li><a href="<?php echo home_url('/'); ?>#about" class="anc">ABOUT</a></li>
             <li><a href="<?php echo home_url(); ?>/loss/">KIRAWARE BACON</a></li>
             <li><a href="<?php echo home_url('/'); ?>#webshop" class="anc">WEBSHOP</a></li>
+            <li><a href="<?php echo home_url(); ?>/renkei/" class="anc">ura-menu</a></li>
             <li><a href="<?php echo home_url('/'); ?>#contact" class="anc">CONTACT</a></li>
           </ul>
         </nav><!-- /grobalNav -->
